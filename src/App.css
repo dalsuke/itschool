@@ -418,39 +418,45 @@
 
 @media (max-width: 600px) {
   /* Мобильные устройства */
-  .nexus-header { padding: 10px 0; top: 65px; }
-  .nexus-logo { font-size: 22px; }
+  .container { padding: 0 20px; }
+  .nexus-header { padding: 10px 0; top: 65px; width: 100%; }
+  .header-container { width: 100%; }
+  .nexus-logo { font-size: 20px; }
   
-  .nexus-hero { padding-top: 120px; text-align: center; }
+  .nexus-hero { padding-top: 140px; text-align: center; overflow: hidden; }
   .typing-text { 
-    font-size: 36px !important; 
-    white-space: normal; 
+    font-size: 32px !important; 
+    white-space: normal !important; 
     line-height: 1.2;
-    border-right: none;
-    width: 100%;
-    animation: none;
+    border-right: none !important;
+    width: 100% !important;
+    animation: none !important; /* Убираем анимацию печати, чтобы не ломать ширину */
+    letter-spacing: -1px;
   }
   
-  .hero-footer { flex-direction: column; align-items: center; text-align: center; }
-  .tags-container { justify-content: center; width: 100%; }
-  .tag-btn { padding: 8px 15px; font-size: 11px; }
-  
-  .wow-title { font-size: 32px !important; letter-spacing: -1px; margin-bottom: 10px !important; }
-  .title-wrapper { margin-bottom: 40px; }
+  .hero-footer { flex-direction: column; align-items: center; text-align: center; gap: 40px; width: 100%; }
+  .tags-container { justify-content: center; width: 100%; gap: 8px; }
+  .tag-btn { padding: 6px 12px; font-size: 11px; }
+  .btn-choose { width: 100%; text-align: center; padding: 18px; font-size: 16px; margin: 0 auto; }
+
+  .wow-title { font-size: 28px !important; letter-spacing: -1px; margin-bottom: 10px !important; line-height: 1.1; }
+  .title-wrapper { margin-bottom: 40px; width: 100%; padding: 0 10px; }
   .section-badge { font-size: 9px; padding: 4px 12px; }
 
-  .courses-bento { display: flex; flex-direction: column; gap: 15px; }
-  .bento-item { height: 300px !important; border-radius: 20px; }
-  .bento-content { padding: 25px; }
-  .bento-content h3 { font-size: 20px; }
+  .courses-bento { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+  .bento-item { width: 100% !important; height: 320px !important; border-radius: 20px; }
+  .bento-content { padding: 20px; }
+  .bento-content h3 { font-size: 18px; }
 
-  .about-grid { grid-template-columns: 1fr; gap: 15px; }
-  .work-step-card { height: 320px; border-radius: 20px; }
+  .about-grid { grid-template-columns: 1fr; gap: 15px; width: 100%; }
+  .work-step-card { height: 350px; border-radius: 20px; width: 100%; }
   .step-num { font-size: 40px; }
   
-  .review-item { min-width: 100%; padding: 25px; border-radius: 20px; }
+  .reviews-scroll { flex-direction: column; overflow-x: visible; }
+  .review-item { min-width: 100% !important; padding: 20px; border-radius: 20px; margin-bottom: 15px; }
   .review-item p { font-size: 14px; }
   
-  .promo-banner { font-size: 10px; }
+  .promo-banner { font-size: 9px; width: 100%; }
+  .promo-banner .container { padding: 5px 15px; }
   .promo-badge { padding: 2px 8px; margin-left: 5px; }
 }
