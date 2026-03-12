@@ -390,57 +390,67 @@
   box-shadow: 0 20px 60px rgba(0, 242, 255, 0.1);
 }
 
-/* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
-@media (max-width: 768px) {
-  /* Скрытие курсора на тач-устройствах */
-  .cursor-follower { display: none; }
+/* --- УЛУЧШЕННАЯ АДАПТИВНОСТЬ И ПЛАВНОСТЬ --- */
 
-  /* Баннер и Шапка */
-  .promo-banner { font-size: 11px; padding: 10px 0; }
-  .promo-banner .container { flex-direction: column; gap: 10px; text-align: center; }
-  .nexus-header { top: 75px; padding: 15px 0; }
-  .nexus-nav { display: none; } /* Скрываем меню на мобилках */
-  .phone-link { display: none; }
-  .nexus-logo { font-size: 24px; }
+/* Плавные переходы для всех элементов */
+* { transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
-  /* Hero */
-  .nexus-hero { padding-top: 150px; padding-bottom: 50px; height: auto; min-height: 100vh; }
-  .typing-text { 
-    font-size: 42px !important; 
-    white-space: normal; /* Разрешаем перенос на мобилках */
-    width: 100%;
-    border-right: none;
-    animation: none; /* Отключаем печать, если текст многострочный */
-  }
-  .hero-footer { gap: 30px; }
-  .tags-container { max-width: 100%; justify-content: center; }
-  .tag-btn { padding: 8px 18px; font-size: 12px; }
-  .btn-choose { width: 100%; text-align: center; padding: 18px; font-size: 16px; }
+@media (max-width: 1100px) {
+  .nexus-hero h1 { font-size: 80px; }
+  .courses-bento { grid-template-rows: repeat(2, 300px); }
+}
 
-  /* WOW Заголовки */
-  .wow-title { font-size: 38px !important; letter-spacing: -1px; text-align: center; }
-  .title-wrapper { margin-bottom: 50px; }
-  .section-badge { font-size: 10px; padding: 6px 15px; }
-
-  /* Bento Grid -> Column */
+@media (max-width: 900px) {
+  /* Планшеты */
+  .nexus-hero h1 { font-size: 64px; letter-spacing: -2px; }
+  .wow-title { font-size: 54px !important; }
   .courses-bento { 
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: auto;
-    gap: 15px;
+    display: grid;
   }
-  .bento-item { grid-column: span 12 !important; grid-row: span 1 !important; height: 350px; }
+  .bento-1 { grid-column: span 2; }
+  .bento-2 { grid-column: span 1; height: 400px; }
+  .bento-3, .bento-4 { grid-column: span 1; height: 200px; }
+  
+  .about-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  /* Мобильные устройства */
+  .nexus-header { padding: 10px 0; top: 65px; }
+  .nexus-logo { font-size: 22px; }
+  
+  .nexus-hero { padding-top: 120px; text-align: center; }
+  .typing-text { 
+    font-size: 36px !important; 
+    white-space: normal; 
+    line-height: 1.2;
+    border-right: none;
+    width: 100%;
+    animation: none;
+  }
+  
+  .hero-footer { flex-direction: column; align-items: center; text-align: center; }
+  .tags-container { justify-content: center; width: 100%; }
+  .tag-btn { padding: 8px 15px; font-size: 11px; }
+  
+  .wow-title { font-size: 32px !important; letter-spacing: -1px; margin-bottom: 10px !important; }
+  .title-wrapper { margin-bottom: 40px; }
+  .section-badge { font-size: 9px; padding: 4px 12px; }
+
+  .courses-bento { display: flex; flex-direction: column; gap: 15px; }
+  .bento-item { height: 300px !important; border-radius: 20px; }
   .bento-content { padding: 25px; }
-  .bento-content h3 { font-size: 22px; }
+  .bento-content h3 { font-size: 20px; }
 
-  /* Шаги работы */
-  .about-grid { gap: 15px; }
-  .work-step-card { height: 350px; border-radius: 20px; }
-  .work-step-content { padding: 25px; }
-  .work-step-card h3 { font-size: 24px; }
-  .step-num { font-size: 50px; }
-
-  /* Отзывы */
-  .review-item { min-width: 280px; padding: 30px; border-radius: 20px; }
-  .review-item p { font-size: 15px; }
+  .about-grid { grid-template-columns: 1fr; gap: 15px; }
+  .work-step-card { height: 320px; border-radius: 20px; }
+  .step-num { font-size: 40px; }
+  
+  .review-item { min-width: 100%; padding: 25px; border-radius: 20px; }
+  .review-item p { font-size: 14px; }
+  
+  .promo-banner { font-size: 10px; }
+  .promo-badge { padding: 2px 8px; margin-left: 5px; }
 }
