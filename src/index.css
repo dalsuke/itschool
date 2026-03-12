@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --nexus-blue: #00f2ff;
+  --nexus-purple: #7000ff;
+  --nexus-gold: #ffcc00;
+  --nexus-dark: #050505;
+  --nexus-gray: #111111;
+  --text-main: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--nexus-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.glow-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glow-spot {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: float-glow 20s infinite alternate;
+}
+
+.glow-spot:nth-child(2) {
+  right: -10%; top: -10%;
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.05) 0%, transparent 70%);
+  animation-duration: 25s;
+  animation-delay: -5s;
+}
+
+@keyframes float-glow {
+  0% { transform: translate(-10%, -10%) scale(1); }
+  100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
